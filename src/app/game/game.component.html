@@ -1,0 +1,40 @@
+<h2 class="display-1 fw-bolder text-center">TIC-TOC-TOE GAME</h2>
+
+<div class="container mt-5">
+    <p class="fw-bolder">player turn is: {{playerTurn}}</p>
+    <div class="w-50 mx-auto">
+  <mat-grid-list cols="3" rowHeight="1:0.5">
+  <mat-grid-tile *ngFor="let square of gameBoard;let i=index" (click)="handlePlayerTurn(i)" class="fs-1 fw-bolder">{{square}}</mat-grid-tile>
+  
+</mat-grid-list>
+
+
+
+
+
+    </div>
+ 
+</div>
+<!-- <audio autoplay *ngIf="(playerOneSound)||(playerTwoSound)">
+    <source src="assets/interface-124464.mp3" type="audio/mpeg" *ngIf="playerOneSound">
+    <source src="assets/ping-82822.mp3" type="audio/mpeg" *ngIf="playerTwoSound">
+</audio> -->
+<div class="position-absolute top-0 start-0 end-0 bottom-0 z-3 layer"*ngIf="(winningMessage!='')||(noOneWinMessage!='')">
+   
+    
+<div class="winning-screen" >
+  <h1 *ngIf="winningMessage!=''">Congratulations!</h1>
+  <p class="text-center fw-bolder mt-2" *ngIf="winningMessage!=''">{{winningMessage}}</p>
+  <p class="text-center fw-bolder mt-2" *ngIf="(noOneWinMessage!='')&&(winningMessage=='')">{{noOneWinMessage}}</p>
+  <div class="confetti"></div>
+  <div class="text-center">
+        <button class="btn play-again" (click)="playAgain()">play again</button>
+    </div>
+    <audio autoplay>
+        <source src="assets/LHUQARY-win-fanfare.mp3" type="audio/mpeg" *ngIf="winningMessage!=''">
+         <source src="assets/7AD8DUL-stop-time.mp3" type="audio/mpeg" *ngIf="noOneWinMessage!=''">
+    </audio>
+</div>
+ 
+</div>
+

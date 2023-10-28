@@ -1,10 +1,10 @@
-<h2 class="display-1 fw-bolder text-center">TIC-TOC-TOE GAME</h2>
+<h2 class="display-1 fw-bolder text-center">TIC-TAC-TOE GAME</h2>
 
 <div class="container mt-5">
     <p class="fw-bolder">player turn is: {{playerTurn}}</p>
     <div class="w-50 mx-auto">
   <mat-grid-list cols="3" rowHeight="1:0.5">
-  <mat-grid-tile *ngFor="let square of gameBoard;let i=index" (click)="handlePlayerTurn(i)" class="fs-1 fw-bolder">{{square}}</mat-grid-tile>
+  <mat-grid-tile *ngFor="let square of gameBoard;let i=index" (click)="handlePlayerTurn(i)" class="fs-1 fw-bolder"><span [ngClass]="{'player-x':square=='X','player-o':square=='O'}">{{square}}</span></mat-grid-tile>
   
 </mat-grid-list>
 

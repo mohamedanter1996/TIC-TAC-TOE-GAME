@@ -22,6 +22,16 @@
     border: 2px solid black;
 }
 
+.player-x{
+    color: blue;
+   text-shadow: 0 0 3px white, 0 0 5px white;
+}
+
+.player-o{
+    color: red;
+    text-shadow: 0 0 3px white, 0 0 5px white;
+}
+
 @keyframes confetti-fall {
   0% {
     transform: translateY(-100%);
